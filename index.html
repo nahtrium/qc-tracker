@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QC Dashboard ✨</title>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
   :root {
@@ -39,7 +38,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background: var(--p0);
     color: var(--ink);
     min-height: 100vh;
@@ -90,7 +89,7 @@
   .topbar-actions { display: flex; gap: 8px; align-items: center; }
   .topbar-btn {
     padding: 0.45rem 1rem; border-radius: 99px; font-size: 0.8rem; font-weight: 700;
-    cursor: pointer; border: none; font-family: 'Satoshi', sans-serif;
+    cursor: pointer; border: none; font-family: 'Plus Jakarta Sans', sans-serif;
     transition: all 0.18s ease; letter-spacing: 0.01em;
   }
   .btn-primary {
@@ -159,7 +158,7 @@
   .filter-field label { display: block; font-size: 0.72rem; font-weight: 700; color: var(--ink2); margin-bottom: 5px; }
   .filter-field select, .filter-field input {
     width: 100%; padding: 0.5rem 0.8rem; border: 1.5px solid var(--p2);
-    border-radius: var(--radius-sm); font-family: 'Satoshi', sans-serif;
+    border-radius: var(--radius-sm); font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.85rem; font-weight: 500; color: var(--ink); background: var(--p0);
     -webkit-appearance: none; appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233B8EF0' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -174,7 +173,7 @@
   .filter-reset {
     padding: 0.5rem 1rem; background: var(--p1); color: var(--p7);
     border: 1.5px solid var(--p2); border-radius: var(--radius-sm);
-    font-family: 'Satoshi', sans-serif; font-size: 0.85rem; font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700;
     cursor: pointer; transition: all 0.15s; white-space: nowrap;
   }
   .filter-reset:hover { background: var(--p2); }
@@ -209,7 +208,7 @@
   .export-btn {
     padding: 0.4rem 1rem; background: var(--p1); border: 1.5px solid var(--p2);
     border-radius: 99px; font-size: 0.78rem; font-weight: 700; cursor: pointer;
-    color: var(--p7); font-family: 'Satoshi', sans-serif; transition: all 0.15s;
+    color: var(--p7); font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.15s;
   }
   .export-btn:hover { background: var(--p2); }
   .table-wrap { overflow-x: auto; }
@@ -299,7 +298,7 @@
   .form-group label .req { color: #E05252; margin-left: 2px; }
   .form-group input, .form-group select, .form-group textarea {
     padding: 0.62rem 0.9rem; border: 1.5px solid var(--p2); border-radius: var(--radius-sm);
-    font-family: 'Satoshi', sans-serif; font-size: 0.875rem; font-weight: 500;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.875rem; font-weight: 500;
     color: var(--ink); background: var(--p0); transition: all 0.15s;
   }
   .form-group select {
@@ -321,14 +320,14 @@
   }
   .btn-cancel {
     padding: 0.62rem 1.4rem; border-radius: 99px; border: 1.5px solid var(--p2);
-    background: #fff; color: var(--ink2); font-family: 'Satoshi', sans-serif;
+    background: #fff; color: var(--ink2); font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.875rem; font-weight: 700; cursor: pointer; transition: all 0.15s;
   }
   .btn-cancel:hover { background: var(--p0); border-color: var(--p3); }
   .btn-submit {
     padding: 0.62rem 1.75rem; border-radius: 99px; border: none;
     background: linear-gradient(135deg, var(--p5), var(--p7)); color: #fff;
-    font-family: 'Satoshi', sans-serif; font-size: 0.875rem; font-weight: 800;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.875rem; font-weight: 800;
     cursor: pointer; transition: all 0.18s ease; display: flex; align-items: center; gap: 6px;
     box-shadow: 0 3px 14px rgba(34,114,217,0.35);
   }
@@ -529,18 +528,6 @@
           </select><span class="form-error" id="err-product-category"></span>
         </div>
         <div class="form-group">
-          <label>MP Category</label>
-          <select id="f-mp-category">
-            <option value="">— Optional —</option>
-            <option>Beverages</option><option>Snacks</option><option>Dairy</option>
-            <option>Frozen</option><option>Bakery</option><option>Condiments</option><option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>MP Name</label>
-          <input type="text" id="f-mp-name" placeholder="Supplier or machine name" />
-        </div>
-        <div class="form-group">
           <label>Reject Quantity <span class="req">*</span></label>
           <input type="number" id="f-qty-reject" placeholder="e.g. 50" min="1" /><span class="form-error" id="err-qty-reject"></span>
         </div>
@@ -558,7 +545,7 @@
       <div class="form-grid">
         <div class="form-group">
           <label>Root Cause <span class="req">*</span></label>
-          <select id="f-root-cause">
+          <select id="f-root-cause" onchange="toggleMPFields()">
             <option value="">— Select —</option>
             <option>Vendor Spec</option><option>Man Power</option><option>Material</option>
             <option>Machine</option><option>Facility</option><option>Recipe</option>
@@ -572,6 +559,26 @@
         <div class="form-group span-2">
           <label>Notes</label>
           <textarea id="f-notes" placeholder="Additional observations, corrective actions, etc."></textarea>
+        </div>
+      </div>
+
+      <!-- MP fields — shown only when Root Cause = Man Power -->
+      <div id="mp-section" style="display:none;animation:fadeUp 0.3s ease both">
+        <div class="form-section-title" style="margin-top:0">👷 Man Power Details</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>MP Category</label>
+            <select id="f-mp-category">
+              <option value="">— Select —</option>
+              <option>Inventory Control</option><option>Grouper</option>
+              <option>Quality Control</option><option>Cook</option>
+              <option>Packer</option><option>TL</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>MP Details</label>
+            <input type="text" id="f-mp-name" placeholder="Name, shift, or additional detail" />
+          </div>
         </div>
       </div>
 
@@ -592,11 +599,11 @@
 // =============================================
 // SUPABASE CONFIG — EDIT THESE
 // =============================================
-const SUPABASE_URL = 'https://ezgundmzrtfssmngtffh.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://ezgundmzrtfssmngtffh.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV6Z3VuZG16cnRmc3Ntbmd0ZmZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1ODI2NzMsImV4cCI6MjA5NDE1ODY3M30.GSdXDNcypE2U2SPREVDtuMyo7r8eKRf9_83FxU0GnSg';
 // =============================================
 
-let supabaseClient = null;
+let supabaseClient = false;
 let allData = [];
 let filteredData = [];
 let charts = {};
@@ -616,25 +623,39 @@ function showView(name) {
 }
 
 function initSupabase() {
-  try {
-    if (SUPABASE_URL === 'https://ezgundmzrtfssmngtffh.supabase.co/rest/v1/') {
-      document.getElementById('supabase-notice').style.display = 'block';
-      return false;
-    }
-    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    return true;
-  } catch(e) {
+  if (SUPABASE_URL === 'YOUR_SUPABASE_URL') {
     document.getElementById('supabase-notice').style.display = 'block';
     return false;
   }
+  supabaseClient = true; // flag: credentials are set
+  return true;
+}
+
+async function sbFetch(path, options = {}) {
+  const url = SUPABASE_URL + '/rest/v1/' + path;
+  const res = await fetch(url, {
+    ...options,
+    headers: {
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': options.prefer || 'return=representation',
+      ...(options.headers || {})
+    }
+  });
+  const text = await res.text();
+  const json = text ? JSON.parse(text) : [];
+  if (!res.ok) {
+    const msg = json?.message || json?.error || text || res.statusText;
+    throw new Error('Supabase ' + res.status + ': ' + msg);
+  }
+  return json;
 }
 
 async function loadData() {
   try {
     if (supabaseClient) {
-      const { data, error } = await supabaseClient
-        .from('qc_entries').select('*').order('date', { ascending: true });
-      if (error) throw error;
+      const data = await sbFetch('qc_entries?select=*&order=date.asc');
       allData = data || [];
     } else {
       allData = JSON.parse(localStorage.getItem('qc_entries') || '[]');
@@ -642,7 +663,8 @@ async function loadData() {
     }
     applyFilters();
   } catch(e) {
-    console.error('Load error:', e);
+    const msg = e?.message || e?.error_description || JSON.stringify(e);
+    console.error('Load error:', msg, e);
     allData = JSON.parse(localStorage.getItem('qc_entries') || '[]');
     applyFilters();
   }
@@ -669,8 +691,11 @@ async function submitEntry() {
   };
   try {
     if (supabaseClient) {
-      const { error } = await supabaseClient.from('qc_entries').insert([entry]);
-      if (error) throw error;
+      await sbFetch('qc_entries', {
+        method: 'POST',
+        prefer: 'return=minimal',
+        body: JSON.stringify(entry)
+      });
     } else {
       const existing = JSON.parse(localStorage.getItem('qc_entries') || '[]');
       existing.push(entry);
@@ -838,8 +863,8 @@ function updateHistogram() {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 11, family: 'Satoshi', weight: '600' }, color: '#7389AA' } },
-        y: { grid: { color: '#E0EFFE' }, ticks: { stepSize: 1, font: { size: 11, family: 'Satoshi' }, color: '#7389AA' } }
+        x: { grid: { display: false }, ticks: { font: { size: 11, family: 'Plus Jakarta Sans', weight: '600' }, color: '#7389AA' } },
+        y: { grid: { color: '#E0EFFE' }, ticks: { stepSize: 1, font: { size: 11, family: 'Plus Jakarta Sans' }, color: '#7389AA' } }
       }
     }
   });
@@ -864,11 +889,11 @@ function updatePareto() {
     ]},
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: true, position:'top', labels: { boxWidth:10, font:{ size:11, family:'Satoshi' } } } },
+      plugins: { legend: { display: true, position:'top', labels: { boxWidth:10, font:{ size:11, family:'Plus Jakarta Sans' } } } },
       scales: {
-        x: { grid:{ display:false }, ticks:{ font:{ size:10, family:'Satoshi' }, color:'#7389AA' } },
-        y: { grid:{ color:'#E0EFFE' }, ticks:{ stepSize:1, font:{ size:11, family:'Satoshi' }, color:'#7389AA' }, position:'left' },
-        y2:{ position:'right', min:0, max:100, grid:{ display:false }, ticks:{ callback: v=>v+'%', font:{ size:11, family:'Satoshi' }, color:'#FF7A7A' } }
+        x: { grid:{ display:false }, ticks:{ font:{ size:10, family:'Plus Jakarta Sans' }, color:'#7389AA' } },
+        y: { grid:{ color:'#E0EFFE' }, ticks:{ stepSize:1, font:{ size:11, family:'Plus Jakarta Sans' }, color:'#7389AA' }, position:'left' },
+        y2:{ position:'right', min:0, max:100, grid:{ display:false }, ticks:{ callback: v=>v+'%', font:{ size:11, family:'Plus Jakarta Sans' }, color:'#FF7A7A' } }
       }
     }
   });
@@ -900,10 +925,10 @@ function updateControlChart() {
     ]},
     options:{
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ display:true, position:'top', labels:{ boxWidth:10, font:{ size:11, family:'Satoshi' } } } },
+      plugins:{ legend:{ display:true, position:'top', labels:{ boxWidth:10, font:{ size:11, family:'Plus Jakarta Sans' } } } },
       scales:{
-        x:{ grid:{ display:false }, ticks:{ font:{ size:11, family:'Satoshi' }, color:'#7389AA' } },
-        y:{ grid:{ color:'#E0EFFE' }, ticks:{ font:{ size:11, family:'Satoshi' }, color:'#7389AA' }, min:0 }
+        x:{ grid:{ display:false }, ticks:{ font:{ size:11, family:'Plus Jakarta Sans' }, color:'#7389AA' } },
+        y:{ grid:{ color:'#E0EFFE' }, ticks:{ font:{ size:11, family:'Plus Jakarta Sans' }, color:'#7389AA' }, min:0 }
       }
     }
   });
@@ -952,6 +977,18 @@ function exportCSV() {
   const blob = new Blob([csv], {type:'text/csv'});
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
   a.download = `qc_rejects_${new Date().toISOString().split('T')[0]}.csv`; a.click();
+}
+
+function toggleMPFields() {
+  const val = document.getElementById('f-root-cause').value;
+  const section = document.getElementById('mp-section');
+  if (val === 'Man Power') {
+    section.style.display = 'block';
+  } else {
+    section.style.display = 'none';
+    document.getElementById('f-mp-category').value = '';
+    document.getElementById('f-mp-name').value = '';
+  }
 }
 
 initSupabase();
